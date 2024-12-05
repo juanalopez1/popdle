@@ -1,11 +1,14 @@
 import typography from "@tailwindcss/typography";
 import forms from "@tailwindcss/forms";
+import hlmTailwindPreset from "@spartan-ng/ui-core/hlm-tailwind-preset";
+
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-    presets: [require("@spartan-ng/ui-core/hlm-tailwind-preset")],
-    content: ["./src/**/*.{html,ts}", "./libs/ui/**/*.{html,ts}"],
-    darkMode: "selector",
+export default {
+    presets: [hlmTailwindPreset],
+    content: [
+      "./src/**/*.{html,ts}", "./libs/ui/**/*.{html,ts}"
+    ],
     theme: {
         extend: {
             /** Undo spartan changes to tailwind containers */
@@ -27,5 +30,4 @@ module.exports = {
             },
         },
     },
-    plugins: [typography, forms({ strategy: "class" })],
-};
+    plugins: [typography, forms({ strategy: "class" })],  }
